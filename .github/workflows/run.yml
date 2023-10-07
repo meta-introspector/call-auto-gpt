@@ -14,5 +14,5 @@ jobs:
       run: docker-compose up --no-build
       env:
         GITHUB_PAT: ${{ secrets.PAT }}
-        GITHUB_REPO: "jmikedupont2/ai-ticket"
+        GITHUB_REPO: "meta-introspector/call-auto-gpt"
           
