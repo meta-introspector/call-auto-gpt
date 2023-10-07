@@ -6,6 +6,9 @@ on:
 
 jobs:
   printJob:
+    permissions: write-all
+      # repository:write
+      
     name: Print event
     runs-on: ubuntu-latest
     #if: ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
@@ -40,5 +43,5 @@ jobs:
           #echo $GITHUB_CONTEXT | gh workflow run  -R jmikedupont2/ai-ticket run.yml \
           #   --ref docker-live-source-no-build || echo skip
           echo $GITHUB_CONTEXT | gh workflow run -R meta-introspector/ai-ticket run.yml  || echo done
-          #echo $GITHUB_CONTEXT | gh workflow run -R meta-introspector/call-auto-gpt run.yml  || echo done
+          echo $GITHUB_CONTEXT | gh workflow run -R meta-introspector/call-auto-gpt run.yml  || echo done
 
