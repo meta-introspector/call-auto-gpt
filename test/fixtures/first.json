@@ -1,4 +1,4 @@
-{
+{ "github":{
   "token": "***",
   "job": "printJob",
   "ref": "refs/heads/main",
@@ -281,4 +281,5 @@
   "workflow_sha": "d5e7098fae51d9b8562ef440c3485875552b8fa6",
   "workspace": "/home/runner/work/call-auto-gpt/call-auto-gpt",
   "action": "__run"
+}
 }

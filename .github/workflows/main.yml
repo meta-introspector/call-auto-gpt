@@ -13,15 +13,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_CONTEXT: ${{ toJson (github) }}
-          GITHUB_USER: ${{ toJson (github.event.sender.login ) }}
-          GITHUB_REPO: ${{ toJson ( github.repository )}}
-
+          GITHUB_USER: ${{ github.event.comment.user.login }}
+          GITHUB_REPO: ${{ github.repository }}
         run: |
-          echo CONTEXT "$GITHUB_CONTEXT"
+          
           echo USER "$GITHUB_USER"
-          # GET /repos/:owner/:repo/collaborators
-          gh api -H "Accept: application/vnd.github+json" \
-          -H "X-GitHub-Api-Version: 2022-11-28" \
-          "/repos/$GITHUB_REPO/collaborators/$GITHUB_USER"
- 
-          #github.event.sender.login
+          echo USER "$GITHUB_REPO"
+          echo ACTOR    "${{ github.actor }}"
+          echo TRIGGER  "${{ github.triggering_actor }}"
+          echo LOGIN    "${{ github.event.comment.user.login }}"
+  
+      - name: Dump GitHub context
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_CONTEXT: ${{ toJson (github) }}
+          GITHUB_USER: ${{ github.event.comment.user.login }}
+          GITHUB_REPO: ${{ github.repository }}
+          ACTION_URL: "/repos/${{ toJson ( github.repository )}}/collaborators/${{ toJson (github.event.sender.login ) }}"
+        run: |
+          echo 
+          echo $ACTION_URL
+          #gh api -H "Accept: application/vnd.github+json" \
+          #  -H "X-GitHub-Api-Version: 2022-11-28" \
+          #  $ACTION_URL
