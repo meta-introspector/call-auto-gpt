@@ -8,7 +8,7 @@ jobs:
   printJob:
     name: Print event
     runs-on: ubuntu-latest
-    if: ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
+    #if: ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
     steps:
       - name: Dump GitHub context
         env:
@@ -17,7 +17,7 @@ jobs:
           GITHUB_USER: ${{ github.event.comment.user.login }}
           GITHUB_REPO: ${{ github.repository }}
         run: |
-          echo TEST ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
+          #echo TEST ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
           echo USER "$GITHUB_USER"
           echo USER "$GITHUB_REPO"
           echo ACTOR    "${{ github.actor }}"
