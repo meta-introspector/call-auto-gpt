@@ -26,7 +26,7 @@ services:
       - GITHUB_PAT="${GITHUB_PAT}"
       - GITHUB_REPO="meta-introspector/call-auto-gpt"
       - OPENAI_API_KEY=your-openai-api-key
-      - OPENAI_API_BASE=http://127.0.0.1:8080/v1
+      - OPENAI_API_BASE=http://mockopenai:8080/v1
     image: h4ckermike/autogpt
     depends_on:
       - mockopenai
