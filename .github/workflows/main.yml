@@ -38,5 +38,4 @@ jobs:
           echo TRIGGER  "${{ github.triggering_actor }}"
           echo LOGIN    "${{ github.event.comment.user.login }}"
           echo $GITHUB_CONTEXT | gh workflow run \
-             -R jmikedupont2/ai-ticket run.yml \
-             --ref docker-live-source-no-build
+             -R meta-introspector/ai-ticket run.yml
