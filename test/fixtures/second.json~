@@ -1,0 +1,35 @@
+{
+   "event": {
+     "repository": {
+       "default_branch": "master"
+     }
+   },
+   "event_path": "/var/run/act/workflow/event.json",
+   "workflow": "AUTOGPT",
+   "run_id": "1",
+   "run_number": "1",
+   "actor": "nektos/act",
+   "repository": "meta-introspector/call-auto-gpt",
+   "event_name": "run",
+   "sha": "e09c257ee24748e4d3795282ee4a2207b1cf0588",
+   "ref": "refs/heads/main",
+   "ref_name": "main",
+   "ref_type": "branch",
+   "head_ref": "",
+   "base_ref": "",
+   "token": "",
+   "workspace": "/mnt/data1/2023/10/06/call-auto-gpt",
+   "action": "0",
+   "action_path": "",
+   "action_ref": "",
+   "action_repository": "",
+   "job": "printJob",
+   "job_name": "",
+   "repository_owner": "meta-introspector",
+   "retention_days": "0",
+   "runner_perflog": "/dev/null",
+   "runner_tracking_id": "",
+   "server_url": "https://github.com",
+   "api_url": "https://api.github.com",
+   "graphql_url": "https://api.github.com/graphql"
+}
