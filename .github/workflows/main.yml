@@ -6,9 +6,11 @@ on:
 
 jobs:
   printJob:
-    permissions:  # https://stackoverflow.com/questions/70435286/resource-not-accessible-by-integration-on-github-post-repos-owner-repo-ac
-      actions: write
-      # write-all
+
+# https://stackoverflow.com/questions/70435286/resource-not-accessible-by-integration-on-github-post-repos-owner-repo-ac   
+    permissions: write-all 
+       # actions: write # did not work
+      
     name: Print event
     runs-on: ubuntu-latest
     if: ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
@@ -40,5 +42,6 @@ jobs:
           echo ACTOR    "${{ github.actor }}"
           echo TRIGGER  "${{ github.triggering_actor }}"
           echo LOGIN    "${{ github.event.comment.user.login }}"
-          echo $GITHUB_CONTEXT | gh workflow run \
-             -R meta-introspector/ai-ticket run.yml
+          echo $GITHUB_CONTEXT | 
+          gh workflow run  run.yml ||fail
+          gh workflow run -R meta-introspector/ai-ticket run.yml ||fail
