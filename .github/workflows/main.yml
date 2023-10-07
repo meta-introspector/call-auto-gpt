@@ -1,13 +1,14 @@
 name: AUTOGPT
 on:
   workflow_dispatch :   #only run when requested
-  issue_comment:                                                                                     
+  issue_comment:
     types: [created]
-  
+
 jobs:
   printJob:
     name: Print event
     runs-on: ubuntu-latest
+    if: ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
     steps:
       - name: Dump GitHub context
         env:
@@ -16,23 +17,26 @@ jobs:
           GITHUB_USER: ${{ github.event.comment.user.login }}
           GITHUB_REPO: ${{ github.repository }}
         run: |
-          
+          echo TEST ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
           echo USER "$GITHUB_USER"
           echo USER "$GITHUB_REPO"
           echo ACTOR    "${{ github.actor }}"
           echo TRIGGER  "${{ github.triggering_actor }}"
           echo LOGIN    "${{ github.event.comment.user.login }}"
-  
-      - name: Dump GitHub context
+
+      - name: run gh workflow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_CONTEXT: ${{ toJson (github) }}
           GITHUB_USER: ${{ github.event.comment.user.login }}
           GITHUB_REPO: ${{ github.repository }}
-          ACTION_URL: "/repos/${{ toJson ( github.repository )}}/collaborators/${{ toJson (github.event.sender.login ) }}"
         run: |
-          echo 
-          echo $ACTION_URL
-          #gh api -H "Accept: application/vnd.github+json" \
-          #  -H "X-GitHub-Api-Version: 2022-11-28" \
-          #  $ACTION_URL
+          echo TEST ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
+          echo USER "$GITHUB_USER"
+          echo USER "$GITHUB_REPO"
+          echo ACTOR    "${{ github.actor }}"
+          echo TRIGGER  "${{ github.triggering_actor }}"
+          echo LOGIN    "${{ github.event.comment.user.login }}"
+          echo $GITHUB_CONTEXT | gh workflow run \
+             -R jmikedupont2/ai-ticket run.yml \
+             --ref docker-live-source-no-build
