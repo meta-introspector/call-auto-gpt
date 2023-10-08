@@ -6,7 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print GitHub context
-      run: echo GITHUB_CONTEXT: ${{ toJson(github) }}
+      env: 
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo GITHUB_CONTEXT:$GIHUB_CONTEXT
     - uses: meta-introspector/checkout@v3
     - name: Checkout repository
       uses: actions/checkout@master
