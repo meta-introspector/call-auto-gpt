@@ -5,13 +5,11 @@ on:
   #  types: [created]
 
 jobs:
-  printJob:
+  printEnv:
     permissions: write-all
-      # repository:write
-      
-    name: Print event
+      # repository:write      
+    name: Print env
     runs-on: ubuntu-latest
-    #if: ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
     steps:
       - name: Dump GitHub context
         env:
@@ -20,13 +18,19 @@ jobs:
           GITHUB_USER: ${{ github.event.comment.user.login }}
           GITHUB_REPO: ${{ github.repository }}
         run: |
-          #echo TEST ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
+          echo TEST ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
           echo USER "$GITHUB_USER"
           echo USER "$GITHUB_REPO"
           echo ACTOR    "${{ github.actor }}"
           echo TRIGGER  "${{ github.triggering_actor }}"
           echo LOGIN    "${{ github.event.comment.user.login }}"
 
+  runJob:
+    permissions: write-all
+    name: Runevent
+    runs-on: ubuntu-latest
+    if: ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks", "amonkhepri"), github.actor ) }}
+    steps:
       - name: run gh workflow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -34,6 +38,7 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson (github) }}
           GITHUB_USER: ${{ github.event.comment.user.login }}
           GITHUB_REPO: ${{ github.repository }}
+          COMMENT_BODY: $${{ github.event.comment.body }}
         run: |
           echo TEST ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks"]'), github.actor ) }}
           echo USER "$GITHUB_USER"
@@ -47,5 +52,14 @@ jobs:
           # echo $GITHUB_CONTEXT | gh workflow run -R meta-introspector/ai-ticket run.yml  || echo done
           
           # call in our own repo
-          echo $GITHUB_CONTEXT | gh workflow run -R meta-introspector/call-auto-gpt run.yml  || echo done
+          #echo $GITHUB_CONTEXT | 
+          gh workflow run \
+              -F AI_NAME=github_seer \
+              -F AI_ROLE=githubactionexpert \
+              -F AI_GOAL_1="write github actions" \
+              -F AI_GOAL_2="get user input" \
+              -F AI_GOAL_3="debug errors" \
+              -F AI_GOAL_4="$COMMENT_BODY" \
+              -F AI_GOAL_COUNT=4
+              -R meta-introspector/call-auto-gpt run.yml  || echo done
 
