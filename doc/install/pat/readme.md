@@ -42,11 +42,15 @@ https://github.com/organizations/meta-introspector/settings/secrets/actions/new
 ![Screenshot_20231008_080515_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/53c69c32-e336-43bb-aa42-d5c4c404377e)
 
 
-Review the organization settings to allow this this to even run
+Review the organization settings 
+https://github.com/organizations/meta-introspector/settings/
+
+
+Check in the actions if to allow workflows to even run
+
 https://github.com/organizations/meta-introspector/settings/actions
 
-Make sure you have Workflow permissions where 
-Workflows have read and write permissions in the repository for all scopes.
+Make sure you have Workflow permissions where the Workflows have read and write permissions in the repository for all scopes.
 ![Screenshot_20231008_080751_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/6bb25635-97a0-4611-9c88-ec98b05e51bd)
 
 General actions permissions
