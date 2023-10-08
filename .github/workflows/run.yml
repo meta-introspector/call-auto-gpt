@@ -29,12 +29,14 @@ jobs:
       env: 
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo GITHUB_CONTEXT:$GIHUB_CONTEXT
-    - uses: meta-introspector/checkout@v3
-      #with:
-      #  submodules: 'true'
-      #  token: $GH_TOKEN
+ #  - uses: meta-introspector/checkout@v3.6.0
+    - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        #submodules: 'true'
+
     - name: Run autogpt in docker with mock openai server
-      run: docker-compose up --no-build
+      run: docker-compose up --no-build 
       env:
         AI_NAME: ${{ inputs.ai_name }}
         AI_ROLE: ${{ inputs.ai_role }}
