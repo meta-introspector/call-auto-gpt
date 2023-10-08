@@ -36,7 +36,7 @@ jobs:
         #submodules: 'true'
 
     - name: Run autogpt in docker with mock openai server
-      run: docker-compose up --no-build 
+      run: docker-compose up --no-build  --abort-on-container-exit
       env:
         AI_NAME: ${{ inputs.ai_name }}
         AI_ROLE: ${{ inputs.ai_role }}
