@@ -38,12 +38,12 @@ jobs:
     - name: Run autogpt in docker with mock openai server
       run: docker-compose up --no-build  --abort-on-container-exit
       env:
-        AI_NAME: ${{ inputs.ai_name }}
-        AI_ROLE: ${{ inputs.ai_role }}
-        AI_GOAL_1: ${{ inputs.ai_goal_1 }}
-        AI_GOAL_2: ${{ inputs.ai_goal_2 }}
-        AI_GOAL_3: ${{ inputs.ai_goal_3 }}
-        AI_GOAL_4: ${{ inputs.ai_goal_4 }}
-        AI_GOAL_COUNT: ${{ inputs.ai_goal_count }}
+        AI_NAME: "'${{ inputs.ai_name }}'"
+        AI_ROLE: "'${{ inputs.ai_role }}'"
+        AI_GOAL_1: "'${{ inputs.ai_goal_1 }}'"
+        AI_GOAL_2: "'${{ inputs.ai_goal_2 }}'"
+        AI_GOAL_3: "'${{ inputs.ai_goal_3 }}'"
+        AI_GOAL_4: "'${{ inputs.ai_goal_4 }}'"
+        AI_GOAL_COUNT: "'${{ inputs.ai_goal_count }}'"
         GITHUB_PAT: ${{ secrets.PAT }}
         GITHUB_REPO: "meta-introspector/call-auto-gpt"  
