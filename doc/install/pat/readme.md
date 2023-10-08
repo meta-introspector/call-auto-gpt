@@ -53,4 +53,5 @@ General actions permissions
 I recommend using Any action or reusable workflow defined in a repository within the meta-introspector organization can be used.
  ![Screenshot_20231008_081830_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/93e56312-f240-4b3a-ac0c-d8c912b7b09e)
 
-Because you should not executed code controlled by a third party. So fork all actions you need into your organization and update all your workflows to use only local workflows.
+Because you should not executed code controlled by a third party. So fork all actions you need into your organization and update all your workflows to use only local workflows. see this change here 
+https://github.com/meta-introspector/call-auto-gpt/commit/ab50a5368aaaa46dd0dfd9c6e348097763c2db99 where I forked actions/checkout to my org and use it. 
