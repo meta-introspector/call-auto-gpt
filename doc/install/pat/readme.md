@@ -6,7 +6,7 @@ that we add with the org token created that has write access to
 for the correct repository.
 ![Screenshot_20231008_070126_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/41c88aba-a715-4bcb-8a67-3b0b8d1bd3b5)
 
-First step is to the pat page
+First step is to navigate to the pat page
 https://github.com/settings/personal-access-tokens
 
 ![Screenshot_20231008_074521_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/912973a8-33ce-4c98-b0d3-d1d3354b28ae)
@@ -31,4 +31,4 @@ Grant action access to call jobs
 Grant workflow access
 ![Screenshot_20231008_074458_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/62b929a5-238b-4461-9ee2-8adbc400800a)
 
-Review the organization settings to allow this this to even run
+Review the organization settings to allow this to even run
