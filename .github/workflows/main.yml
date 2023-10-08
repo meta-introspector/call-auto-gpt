@@ -29,7 +29,11 @@ jobs:
     permissions: write-all
     name: Runevent
     runs-on: ubuntu-latest
-    # if: ${{ contains(fromJson('["nektos/act", "jmikedupont2", "Mysticmarks", "amonkhepri"]), github.actor ) }}
+    #if: ${{ contains(fromJson('[ "nektos/act", "jmikedupont2", "Mysticmarks", "amonkhepri" ]'), github.actor ) }}
+    #if: contains(github.event.comment.html_url, '/pull/')    # check if the comments come from pull request, exclude those from issue.
+    #if: contains(github.event.comment.body, '/support')   # check the
+    if: startsWith(${{ github.event.comment.body }}, '/agent-action')
+runs-on: [ubuntu-latest]
     steps:
       - name: run gh workflow
         env:
