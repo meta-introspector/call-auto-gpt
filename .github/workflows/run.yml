@@ -11,14 +11,14 @@ on:
      ai_goal_count:
        type: number
        required: true
-     ai_goals_1:
+     ai_goal_1:
        type: string
        required: true
-     ai_goals_2:
+     ai_goal_2:
        type: string
-     ai_goals_3:
+     ai_goal_3:
        type: string
-     ai_goals_4:
+     ai_goal_4:
        type: string
 
 jobs:
