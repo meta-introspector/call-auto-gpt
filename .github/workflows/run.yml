@@ -1,25 +1,25 @@
 name: runbot
 on:
-  workflow_dispatch :   #only run when requested
-    inputs:
-     ai_name :
-       type: string
-       required: true
-     ai_role:
-       type: string
-       required: true
-     ai_goal_count:
-       type: number
-       required: true
-     ai_goal_1:
-       type: string
-       required: true
-     ai_goal_2:
-       type: string
-     ai_goal_3:
-       type: string
-     ai_goal_4:
-       type: string
+#  workflow_dispatch :   #only run when requested
+#    inputs:
+#     ai_name :
+#       type: string
+#       required: true
+#     ai_role:
+#       type: string
+#       required: true
+#     ai_goal_count:
+#       type: number
+#       required: true
+#     ai_goal_1:
+#       type: string
+#       required: true
+#     ai_goal_2:
+#       type: string
+#     ai_goal_3:
+#       type: string
+#     ai_goal_4:
+#       type: string
 
 jobs:
   run_bot:    
