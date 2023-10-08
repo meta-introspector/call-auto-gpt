@@ -60,6 +60,6 @@ jobs:
               -F AI_GOAL_2="get user input" \
               -F AI_GOAL_3="debug errors" \
               -F AI_GOAL_4="$COMMENT_BODY" \
-              -F AI_GOAL_COUNT=4
+              -F AI_GOAL_COUNT=4 \
               -R meta-introspector/call-auto-gpt run.yml  || echo done
 
