@@ -31,4 +31,27 @@ Grant action access to call jobs
 Grant workflow access
 ![Screenshot_20231008_074458_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/62b929a5-238b-4461-9ee2-8adbc400800a)
 
-Review the organization settings to allow this to even run
+Now take the pat you created, dont share it with anyone and And finally add the PAT to 
+ to your org secrets 
+https://github.com/organizations/meta-introspector/settings/secrets/actions
+
+Create new secret 
+
+https://github.com/organizations/meta-introspector/settings/secrets/actions/new 
+![Screenshot_20231008_080511_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/e961eb02-7720-493b-aee4-19e4bf9e1aca)
+![Screenshot_20231008_080515_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/53c69c32-e336-43bb-aa42-d5c4c404377e)
+
+
+Review the organization settings to allow this this to even run
+https://github.com/organizations/meta-introspector/settings/actions
+
+Make sure you have Workflow permissions where 
+Workflows have read and write permissions in the repository for all scopes.
+![Screenshot_20231008_080751_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/6bb25635-97a0-4611-9c88-ec98b05e51bd)
+
+General actions permissions
+I recommend using Any action or reusable workflow defined in a repository within the meta-introspector organization can be used.
+ ![Screenshot_20231008_081830_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/93e56312-f240-4b3a-ac0c-d8c912b7b09e)
+
+Because you should not execute code controlled by a third party. So fork all actions you need into your organization and update all your workflows to use only local workflows. See this change here 
+https://github.com/meta-introspector/call-auto-gpt/commit/ab50a5368aaaa46dd0dfd9c6e348097763c2db99 where I forked actions/checkout to my org and use it. 
