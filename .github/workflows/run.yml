@@ -5,7 +5,8 @@ jobs:
   build:    
     runs-on: ubuntu-latest
     steps:
-    - run: echo GITHUB_CONTEXT: ${{ toJson (github) }}
+    - name: Print GitHub context
+      run: echo GITHUB_CONTEXT: ${{ toJson(github) }}
     - uses: meta-introspector/checkout@v3
     - name: Checkout repository
       uses: actions/checkout@master
@@ -15,5 +16,4 @@ jobs:
       run: docker-compose up --no-build
       env:
         GITHUB_PAT: ${{ secrets.PAT }}
-        GITHUB_REPO: "meta-introspector/call-auto-gpt"
-          
+        GITHUB_REPO: "meta-introspector/call-auto-gpt"  
