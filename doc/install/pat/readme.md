@@ -31,4 +31,25 @@ Grant action access to call jobs
 Grant workflow access
 ![Screenshot_20231008_074458_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/62b929a5-238b-4461-9ee2-8adbc400800a)
 
+Now take the pat you created, dont share it with anyone and And finally add the PAT to 
+ to your org secrets 
+https://github.com/organizations/meta-introspector/settings/secrets/actions
+
+Create new secret 
+
+https://github.com/organizations/meta-introspector/settings/secrets/actions/new
+
+
 Review the organization settings to allow this this to even run
+https://github.com/organizations/meta-introspector/settings/actions
+
+Make sure you have Workflow permissions where 
+Workflows have read and write permissions in the repository for all scopes.
+
+General actions permissions
+I recommend using Any action or reusable workflow defined in a repository within the meta-introspector organization can be used.
+and not this one :
+Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within the meta-introspector organization, can be used. Learn more about allowing specific actions and reusable workflows to run.
+
+Because you should not executed code controlled by a third party. So fork all actions you need into your organization and update all your workflows to use only local workflows.
+
