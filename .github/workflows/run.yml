@@ -10,8 +10,6 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo GITHUB_CONTEXT:$GIHUB_CONTEXT
     - uses: meta-introspector/checkout@v3
-    - name: Checkout repository
-      uses: actions/checkout@master
       with:
         submodules: 'true'        
     - name: Run autogpt in docker with mock openai server
