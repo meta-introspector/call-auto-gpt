@@ -17,24 +17,14 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     entrypoint: |
-      bash -c "echo poetry run autogpt --install-plugin-deps \
-      --skip-news \
-      --ai-name $AI_NAME \
-      --ai-role $AI_ROLE \
-      --ai-goal $AI_GOAL_1 \
-      --ai-goal $AI_GOAL_2 \
-      --ai-goal $AI_GOAL_3 \
-      --ai-goal $AI_GOAL_4 \
-      -y --continuous      \
-      --continuous-limit 1" && \
       bash -c "poetry run autogpt --install-plugin-deps \
       --skip-news \
-      --ai-name "${AI_NAME}" \
-      --ai-role "${AI_ROLE}" \
-      --ai-goal "${AI_GOAL_1}" \
-      --ai-goal "${AI_GOAL_2}" \
-      --ai-goal "${AI_GOAL_3}" \
-      --ai-goal "${AI_GOAL_4}" \
+      --ai-name "\'${AI_NAME}\'" \
+      --ai-role "\'${AI_ROLE}\'" \
+      --ai-goal "\'${AI_GOAL_1}\'" \
+      --ai-goal "\'${AI_GOAL_2}\'" \
+      --ai-goal "\'${AI_GOAL_3}\'" \
+      --ai-goal "\'${AI_GOAL_4}\'" \
       -y --continuous      \
       --continuous-limit 1"
 
