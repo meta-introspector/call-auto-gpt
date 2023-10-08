@@ -29,8 +29,8 @@ jobs:
       env: 
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo GITHUB_CONTEXT:$GIHUB_CONTEXT
- #  - uses: meta-introspector/checkout@v3.6.0
-    - uses: actions/checkout@v3
+    - uses: meta-introspector/checkout@v3.6.0
+  # - uses: actions/checkout@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         #submodules: 'true'
