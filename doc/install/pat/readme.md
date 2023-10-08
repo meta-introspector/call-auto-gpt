@@ -6,7 +6,7 @@ that we add with the org token created that has write access to
 for the correct repository.
 ![Screenshot_20231008_070126_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/41c88aba-a715-4bcb-8a67-3b0b8d1bd3b5)
 
-First step is to the pat page
+First step is to navigate to the pat page
 https://github.com/settings/personal-access-tokens
 
 ![Screenshot_20231008_074521_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/912973a8-33ce-4c98-b0d3-d1d3354b28ae)
@@ -53,5 +53,5 @@ General actions permissions
 I recommend using Any action or reusable workflow defined in a repository within the meta-introspector organization can be used.
  ![Screenshot_20231008_081830_Chrome](https://github.com/meta-introspector/call-auto-gpt/assets/16427113/93e56312-f240-4b3a-ac0c-d8c912b7b09e)
 
-Because you should not executed code controlled by a third party. So fork all actions you need into your organization and update all your workflows to use only local workflows. see this change here 
+Because you should not execute code controlled by a third party. So fork all actions you need into your organization and update all your workflows to use only local workflows. See this change here 
 https://github.com/meta-introspector/call-auto-gpt/commit/ab50a5368aaaa46dd0dfd9c6e348097763c2db99 where I forked actions/checkout to my org and use it. 
