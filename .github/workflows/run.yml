@@ -5,7 +5,7 @@ jobs:
   build:    
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: meta-introspector/checkout@v3
     - name: Checkout repository
       uses: actions/checkout@master
       with:
