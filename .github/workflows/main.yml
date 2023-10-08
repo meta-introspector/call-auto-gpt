@@ -39,10 +39,13 @@ jobs:
           echo USER "$GITHUB_USER"
           echo USER "$GITHUB_REPO"
           echo ACTOR    "${{ github.actor }}"
-          echo TRIGGER  "${{ github.triggering_actor }}"
-          echo LOGIN    "${{ github.event.comment.user.login }}"
+          #echo TRIGGER  "${{ github.triggering_actor }}"
+          #echo LOGIN    "${{ github.event.comment.user.login }}"
           #echo $GITHUB_CONTEXT | gh workflow run  -R jmikedupont2/ai-ticket run.yml \
           #   --ref docker-live-source-no-build || echo skip
-          echo $GITHUB_CONTEXT | gh workflow run -R meta-introspector/ai-ticket run.yml  || echo done
+          # call an another repo
+          # echo $GITHUB_CONTEXT | gh workflow run -R meta-introspector/ai-ticket run.yml  || echo done
+          
+          # call in our own repo
           echo $GITHUB_CONTEXT | gh workflow run -R meta-introspector/call-auto-gpt run.yml  || echo done
 
