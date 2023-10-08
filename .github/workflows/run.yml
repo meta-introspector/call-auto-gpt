@@ -28,12 +28,11 @@ jobs:
     - name: Print GitHub context
       env: 
         GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo GITHUB_CONTEXT:$GIHUB_CONTEXT
+      run: echo GITHUB_CONTEXT:$GITHUB_CONTEXT
+    
     - uses: meta-introspector/checkout@v3.6.0
-  # - uses: actions/checkout@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        #submodules: 'true'
 
     - name: Run autogpt in docker with mock openai server
       run: docker-compose up --no-build  --abort-on-container-exit
@@ -46,4 +45,4 @@ jobs:
         AI_GOAL_4: "'${{ inputs.ai_goal_4 }}'"
         AI_GOAL_COUNT: "'${{ inputs.ai_goal_count }}'"
         GITHUB_PAT: ${{ secrets.PAT }}
-        GITHUB_REPO: "meta-introspector/call-auto-gpt"  
+        GITHUB_REPO: ${{ github.repository }}
