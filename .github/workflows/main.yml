@@ -1,8 +1,8 @@
 name: AUTOGPT
 on:
   workflow_dispatch :   #only run when requested
-  issue_comment:
-    types: [created]
+  #issue_comment:
+  #  types: [created]
 
 jobs:
   printEnv:
