@@ -12,4 +12,4 @@ jobs:
       - name: Dump GitHub context
         run: |
           echo COMMENT_BODY  ${{ github.event.comment.body }}
-          echo TEST2 ${{ startsWith( github.event.comment.body, '/agent-action')}}
+          echo TEST2 
