@@ -1,0 +1,15 @@
+name: AUTOGPT
+on:
+  #workflow_dispatch :   #only run when requested
+  # comment out the next line
+  issue_comment:
+    types: [created]
+jobs:
+  printEnv:
+    name: Print env
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        run: |
+          echo COMMENT_BODY  ${{ github.event.comment.body }}
+          echo TEST2 startsWith(${{ github.event.comment.body }}, '/agent-action')
