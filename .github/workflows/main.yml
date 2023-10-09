@@ -54,13 +54,13 @@ jobs:
           
           # call in our own repo
           #echo $GITHUB_CONTEXT | 
-          echo skip for now gh workflow run \
+          gh workflow run \
               -f ai_name=github_seer \
               -f ai_role=githubactionexpert \
               -f ai_goal_1="write github actions" \
               -f ai_goal_2="get user input" \
               -f ai_goal_3="debug errors" \
-              -f ai_goal_4="$comment_body" \
+              -f ai_goal_4="${COMMENT_BODY}" \
               -f ai_goal_count=4 \
               -R meta-introspector/call-auto-gpt run.yml  || echo done
 
