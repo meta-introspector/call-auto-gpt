@@ -1,9 +1,9 @@
 name: AUTOGPT
 on:
-  #workflow_dispatch :   #only run when requested
-  # comment out the next line
-  issue_comment:
-    types: [created]
+  workflow_dispatch :   #only run when requested
+  # comment out the next 2 lins to stop it
+  #issue_comment:
+  #  types: [created]
 jobs:
   printEnv:
     name: Print env
