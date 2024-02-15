@@ -3,7 +3,7 @@ This repo is an example to show how you can call autogpt with a github action
 First setup by putting a github token into the variable PAT in your organization and granting it access. 
 
 
-
+you create an issue and add the comment "/agent-action" to to the comment body to trigger.
 
 You can also run it locally, Using podman-compose, 
 
