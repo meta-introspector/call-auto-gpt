@@ -62,5 +62,5 @@ jobs:
               -f ai_goal_3="debug errors" \
               -f ai_goal_4="${COMMENT_BODY}" \
               -f ai_goal_count=4 \
-              -R meta-introspector/call-auto-gpt run.yml  || echo done
+              -R ${{ github.repository }} run.yml  || echo done
 
